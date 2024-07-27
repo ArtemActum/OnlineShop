@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('searchIntercept', (expectedStatusCode = 200) => {
+    cy.intercept('POST', '/api/search', {
+    }, (res) => {
+        expect(res.statusCode).to.eq(expectedStatusCode);
+    }).as('searchRequest');
+});
