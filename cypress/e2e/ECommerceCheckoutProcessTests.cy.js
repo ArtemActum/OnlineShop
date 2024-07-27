@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('User checkout flow', () => {
+describe('User flow for online shop', () => {
 
   beforeEach(() => {
     cy.visit('/');
